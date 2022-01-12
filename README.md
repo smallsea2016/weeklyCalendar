@@ -1,10 +1,24 @@
 # weeklyCalendar
+### weeklyCalendar(selector,object)
 >weeklyCalendar，周历控件。
 
-纯js，不依赖第三方库<br/>
-支持设置默认选中日期<br/>
-支持设置禁用日期<br/>
+纯js，不依赖第三方库  
+支持设置默认选中日期  
+支持设置禁用日期  
 
+### Attributes
+
+| 参数                    | 说明                  | 类型     | 可选值 | 默认值 |
+| ----------------------- | -------------------- | -------- | ------| ------- |
+| selector                | 选择器                | String   | -    | -        | 
+| object.isStartMon       | 是否从周一开始        | Boolean   | -    | -        | 
+| object.toDoDate         | 设置待办日期          | Array    | -     | -        | 
+| object.disabledDate     | 设置禁用日期          | Array    | -     | -        |  
+| object.clickDate        | 点击日期回调          | Function | -     | dateTime |  
+| object.getSelectedDate  | 获取选中日期          | Function | -     | dateTime |  
+  
+
+  
 ##### js使用示例:
 ```js
   // 默认周历
@@ -38,5 +52,11 @@
     clickDate:function(dateTime){
       console.log(dateTime);
     }
+  }); 
+
+  
+  //设置周一开始
+    weeklyCalendar('#j_weeklyCalendar5',{        
+      isStartMon: true
   }); 
 ```

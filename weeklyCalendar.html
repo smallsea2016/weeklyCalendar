@@ -85,6 +85,17 @@
       <ul role="weeklyCalendarView" class="weeklyCalendarBox"></ul>
     </div>
 
+    <h3>设置周一开始</h3>
+    <div id="j_weeklyCalendar5" class="myWeeklyCalendar">
+      <div class="datetime_header">
+          <a href="javascript:;" title="上一周" class="prev_icon" role="prev_week"></a>
+          <span><b role="year_selector"></b>年<b role="month_selector"></b>月</span><span style="margin-left: 20px;display: none">第<b role="week_selector"></b>周</span>        
+          <a href="javascript:;" title="下一周" class="next_icon" role="next_week"></a>
+      </div>
+      <ul role="weeks_ch" class="weeklyBox"></ul>
+      <ul role="weeklyCalendarView" class="weeklyCalendarBox"></ul>
+    </div>
+
     <script src="js/weeklyCalendar.js"></script>
     <script type="text/javascript"> 
      // 默认周历
@@ -118,6 +129,11 @@
         clickDate:function(dateTime){
           console.log(dateTime);
         }
+      }); 
+
+      //设置周一开始
+       weeklyCalendar('#j_weeklyCalendar5',{        
+         isStartMon: true
       }); 
 
      </script>

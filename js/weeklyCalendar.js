@@ -23,7 +23,8 @@ function weeklyCalendar(container,options) {
   };
 
   var d = options['defaultDate'] ? new Date(options['defaultDate']) : new Date();
-  var activeDay =  d.getDay(),
+  var isStartMon = options['isStartMon']
+  var activeDay =  isStartMon ? d.getDay() - 1 : d.getDay(),
     activeDate = zeroize(d.getDate()),
     activeMonth = zeroize(d.getMonth() + 1),
     activeYear = d.getFullYear();
@@ -33,7 +34,8 @@ function weeklyCalendar(container,options) {
   /*创建星期*/
   var creatWeek = function () {
     var span = '';
-    var weeks_ch = ['日', '一', '二', '三', '四', '五', '六'];
+    var weeks = ['日', '一', '二', '三', '四', '五', '六'];
+    var weeks_ch = isStartMon ? weeks.slice(1).concat(weeks.slice(0,1)) : weeks;
     for (var i = 0, len = weeks_ch.length; i < len; i++) {
       span += '<li>' + weeks_ch[i] + '</li>';
     };
